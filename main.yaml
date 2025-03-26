@@ -1,0 +1,45 @@
+AWSTemplateFormatVersion: 2010-09-09
+Description: Jenkins Infrasturture with Cloudformation template 
+Metadata:
+  'AWS::CloudFormation::Interface':
+    ParameterGroups:
+    - Label:
+        default: Common Parameters
+      Parameters:
+      - ResourceID
+      - Environment 
+    - Label:
+        default: Network Parameters
+      Parameters:
+      - VpcId
+      - AvailabilityZones 
+      - PrivateSubnets
+      - PublicSubnets
+      - Route53HostedZone
+      - Route53HostedZoneID
+      - JenkinsWebAddress
+      - JenkinsSSLArn
+      - HooksSSLArn
+    - Label:
+        default: EC2 Configuration Parameters
+      Parameters:
+      - JenkinsMasterSDFVolumeId
+      - LinuxInstanceAMI
+      - WindowsAgentInstanceAMI
+      - MasterInstanceType
+      - MasterInstanceSize
+      - WindowsAgentInstanceType
+      - WindowsInstanceSize
+      - UbuntuAgentInstanceType
+      - UbuntuInstanceSize
+      - EWPWindowsInstanceSize
+    - Label:
+        default: Software Parameters
+      Parameters:
+      - JenkinsDockerVersion
+      - MavenVersion 
+      - WindowsJDKURL
+      - WindowsChromeURL
+      - WindowsFirefoxURL
+      - WindowsGeckoDriverURL
+      - WindowsGitURL
