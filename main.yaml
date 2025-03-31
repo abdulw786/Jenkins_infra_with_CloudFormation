@@ -43,3 +43,24 @@ Metadata:
       - WindowsFirefoxURL
       - WindowsGeckoDriverURL
       - WindowsGitURL
+Parameters:
+  AssetID:
+    Type: String
+    Default: 2025
+    Description: The TR asset ID that Jenkins is using
+  VpcId:
+    Type: AWS::EC2::VPC::Id
+    Description: The VPC being used
+    Default: 'vpc'
+  AvailabilityZones:
+    Type: List<AWS::EC2::AvailabilityZone::Name>
+    Description: The availability zones being used in AutoScaling Groups, should be B
+    Default: 'us-east-1b'
+  PrivateSubnets:
+    Type: List<AWS::EC2::Subnet::Id>
+    Description: The private subnets being used in AutoScaling Groups, should be Private B
+    Default: 'subnet-a'
+  PublicSubnets:
+    Type: List<AWS::EC2::Subnet::Id>
+    Description: The public subnets being used in Application Load Balancer, should be Public B and C
+    Default: subnet-c,subnet-d
